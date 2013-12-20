@@ -56,3 +56,10 @@ function offline() {
 	webStatus.innerHTML = "Offline";
 }
 
+$(".configToggle").click(function(){
+	$("#config").fadeToggle("slow");
+});
+
+$(".cslose").click(function(){
+	$("#config").fadeOut("slow");
+});
