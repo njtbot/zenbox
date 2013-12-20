@@ -1,0 +1,36 @@
+body {
+	
+}
+
+#wrapper {
+	width: 1000px;
+	margin: 50px auto;
+	background: #fff;
+}
+
+#zenbox {
+	padding: 20px 20px 20px 20px;
+	width: 800px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;	
+	outline: 0px solid transparent;
+}
+
+#zenbox:hover {
+	outline: 0px solid transparent;
+}
+
+#footer {
+	position: fixed;
+	left: 5px;
+	bottom: 25px;
+	height: 25px;
+	width: 100%;
+	color: #999;
+	padding: 20px 30px 20px 30px;
+}
+
+.glyphicon:hover {
+	color: #000;
+}
