@@ -47,10 +47,18 @@ window.onload = function() {
 		localStorage[fileKey] = zen.innerHTML;
 	}
 
+	disableSpellcheck();
+
 	/* Update user on change */
 	window.addEventListener('online', online, false);
 	window.addEventListener('offline', offline, false);
 };
+
+function disableSpellcheck() {
+	zen.spellcheck = false;
+	zen.focus();
+	zen.blur();
+}
 
 
 function placeCaretAtEnd(el) {
