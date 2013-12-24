@@ -5,7 +5,10 @@ I'm Zenbox. "Lightweight" (as in feature-devoid) homepage replacement that allow
 
 30 minute hacky implementation. Lots of features to add to make this fun. 
 
+Uses html5 local storage, so you better have a good browser. IE go away.
+
 ###Todo    
 Dropbox/Owncloud/local storage integration    
 Email note    
 Rich text to a degree (using a js lib)    
+Full screen (this.fullscreen?)   
