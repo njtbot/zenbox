@@ -16,10 +16,6 @@ var zenColour = ["#eee", "#111", "#fff"]; // 222
 var fontColour = ["#000", "#eee", "#1bc"];
 var noPanes = [1, 2, 4];
 
-/*
-http://www.sitepoint.com/html5-full-screen-api/
-*/
-
 window.onload = function() {
 
 	/* Check for HTML5 local storage */
