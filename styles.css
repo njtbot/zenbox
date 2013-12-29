@@ -11,6 +11,8 @@
 	margin-left: auto;	
 	margin-right: auto;	
 	outline: 0px solid transparent;
+	resize: both;
+	overflow: auto;
 }
 
 #zb1 { 
@@ -89,6 +91,7 @@
 
 .glyphicon:hover {
 	color: #000;
+	cursor: arrow;
 }
 
 .arrow-right {

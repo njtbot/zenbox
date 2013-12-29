@@ -12,7 +12,7 @@ var MAX_OPTIONS = 2;
 var configIndex = [0,0];
 var themes = ["Day", "Night", "Other"];
 var bgColour = ["#fff", "#222", "#adc"];
-var zenColour = ["#fff", "#111", "#fff"]; // 222
+var zenColour = ["#eee", "#111", "#fff"]; // 222
 var fontColour = ["#000", "#eee", "#1bc"];
 var noPanes = [1, 2, 4];
 
@@ -185,7 +185,7 @@ function updateConfig() {
 		case noPanes[1]:
 			zenWrapper.innerHTML = '<div class="row"> \
 									<div class="col-md-6"> \
-									<div class="zenbox" id="zb1" contenteditable="true"></div></div> \
+									<div class="zenbox ui-widget-content" id="zb1" contenteditable="true"></div></div> \
 									<div class="col-md-6"> \
 									<div class="zenbox" id="zb2" contenteditable="true">Test zb2</div></div> \
 									</div>';
@@ -230,9 +230,9 @@ function updateConfig() {
 			zen.style.color = fontColour[configIndex[0]]; 
 			zen2.style.backgroundColor = zenColour[configIndex[0]]; 
 			zen2.style.color = fontColour[configIndex[0]]; 
+
 			zen.innerHTML = localStorage[fileKey[0]] || '';
 			zen2.innerHTML = localStorage[fileKey[1]] || '';
-			
 			break;
 		case noPanes[2]:
 			zen.style.backgroundColor = zenColour[configIndex[0]]; 
@@ -243,14 +243,13 @@ function updateConfig() {
 			zen3.style.color = fontColour[configIndex[0]];  
 			zen4.style.backgroundColor = zenColour[configIndex[0]]; 
 			zen4.style.color = fontColour[configIndex[0]];  
+
 			zen.innerHTML = localStorage[fileKey[0]] || '';
 			zen2.innerHTML = localStorage[fileKey[1]] || '';
 			zen3.innerHTML = localStorage[fileKey[2]] || '';
 			zen4.innerHTML = localStorage[fileKey[3]] || '';
-			
 			break;
 	}
-
 	
 	placeCaretAtEnd(zen);
 
