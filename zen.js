@@ -268,9 +268,30 @@ jQuery(document).ready(function() {
 		placeCaretAtEnd(zen);
 	});
 
+	/* Scrape and save all data to local computer */
 	$("#saveData").click(function() {
-		$("#save-dialog").dialog("open");
+		//$("#save-dialog").dialog("open");
+		var saveText = "testing saving";
+		var filename = "test-download.txt";
+		var saveLink = document.getElementById("downloadLink");
+		saveLink.setAttribute('href', 'data:text/plain,charset=utf-8,'+saveText);
+		saveLink.setAttribute('download', filename);
+		
+		document.getElementById("zb1").addEventListener("keyup", function()
+		{
+			
+			//saveLink.setAttribute('href',"data:text/plain,"+this.value);
+			window.location.href = saveLink.href;
+		},false);
+
+		//window.location.href="data:text/plain,"+ encodeURIComponent(saveText);
 	});
+
+	/*
+	document.getElementById("text").addEventListener("keyup",function() {
+			document.getElementById("download").href="data:text/plain,"+this.value;
+		}, false);
+	*/			
 
 	$("#save-dialog").dialog({
 		autoOpen: false,
@@ -279,6 +300,7 @@ jQuery(document).ready(function() {
 		model: true
 	});
 
+	/* Launch fullscreen mode */
 	$("#fullscreen").click(function() {
 		/* Bodgy truth testing to launch correct prefix */
 		if (document.documentElement.requestFullscreen) {

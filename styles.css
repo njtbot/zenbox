@@ -5,6 +5,9 @@
 }
 
 .zenbox {
+	font-family: 'Lucida Console', 'Courier New';
+	font-size: 16pt;
+	font-weight: 1.2;
 	padding: 20px 20px 20px 20px;
 	width: auto;
 	height: 100%;
@@ -15,6 +18,12 @@
 	overflow: auto;
 }
 
+.glyphicon { 
+	cursor: pointer;
+}
+#quickLinks {
+	cursor: default;
+}
 #zb1 { 
 	background-color: #000;
 }
