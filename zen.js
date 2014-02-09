@@ -10,11 +10,13 @@ var fileKey = ["zenboxDraft1","zenboxDraft2","zenboxDraft3","zenboxDraft4"];
 var configKeys = ["zenboxConfig1", "zenboxConfig2"];
 var MAX_OPTIONS = 2;
 var configIndex = [0,0];
+var noPanes = [1, 2, 4];
+
+/* Theming */
 var themes = ["Day", "Night", "Other"];
 var bgColour = ["#fff", "#222", "#adc"];
 var zenColour = ["#eee", "#111", "#fff"]; // 222
 var fontColour = ["#000", "#eee", "#1bc"];
-var noPanes = [1, 2, 4];
 
 /*
 http://www.sitepoint.com/html5-full-screen-api/
@@ -277,6 +279,19 @@ jQuery(document).ready(function() {
 		model: true
 	});
 
+	$("#fullscreen").click(function() {
+		/* Bodgy truth testing to launch correct prefix */
+		if (document.documentElement.requestFullscreen) {
+			document.documentElement.requestFullscreen();
+		} else if (document.documentElement.mozRequestFullScreen) {
+			document.documentElement.mozRequestFullScreen();
+		} else if (document.documentElement.webkitRequestFullscreen) {
+			document.documentElement.webkitRequestFullscreen();
+		} else if (document.documentElement.msRequestFullscreen) {
+			document.documentElement.msRequestFullscreen();
+		}
+	});
+
 	/* Option handlers */
 	$(".arrow-right").click(function() {
 		/* Find location of array in config DOM */
@@ -309,6 +324,7 @@ jQuery(document).ready(function() {
 	});
 
 	$("#clearData").click(function() {
+		/* TODO - confirmation dialog */
 		localStorage.clear();
 		zen.innerHTML = "";
 		location.reload();
