@@ -4,8 +4,35 @@
 	background: rgba(0,0,0,0);
 }
 
+a {
+  color:#ff5b00;
+  font-weight:400;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration:none;
+  color: #ff5b00;
+  font-weight:400;
+}
+
+a:visited {
+  text-decoration:none;
+  color: #ff5b00;
+  font-weight:400;
+}
+
+a:hover {
+  text-decoration:underline;
+  color: #ff5b00;
+  font-weight:400;
+}
+
 .zenbox {
-	padding: 20px 20px 20px 20px;
+	font-family: 'Lucida Console', 'Courier New';
+	font-size: 16pt;
+	font-weight: 1.2;
+	padding: 40px 20px 70px 40px;
 	width: auto;
 	height: 100%;
 	margin-left: auto;	
@@ -13,6 +40,12 @@
 	outline: 0px solid transparent;
 }
 
+.glyphicon { 
+	cursor: pointer;
+}
+#quickLinks {
+	cursor: default;
+}
 #zb1 { 
 	background-color: #000;
 }
@@ -65,7 +98,7 @@
 	right: 20px;
 	top: 20px;
 	width: 250px;
-	height: 450px;
+	height: 270px;
 	background: #fff;
 	border: 1px solid #eee;
 	padding: 15px 20px 20px 20px;
@@ -99,7 +132,7 @@
 	height: 0;
 	border-top: 8px solid transparent;
 	border-bottom: 8px solid transparent;
-	border-left: 8px solid #eee;
+	border-left: 8px solid #000;
 }
 
 .arrow-left {
@@ -109,5 +142,5 @@
 	height: 0;
 	border-top: 8px solid transparent;
 	border-bottom: 8px solid transparent;
-	border-right: 8px solid #eee;
+	border-right: 8px solid #000;
 }
