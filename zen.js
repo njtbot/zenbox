@@ -1,26 +1,30 @@
 /*
  * Zen.js
  *
- * Zenbox homepage replacement. Lightweight persistent note taking.
+ * Lightweight homepage notepad.
  *
+ * nicholastrimble.com / Feb 2014
  */
 
 var zen, zen2, zen3, zen4, webStatus, config1, config2;
-var fileKey = ["zenboxDraft1","zenboxDraft2","zenboxDraft3","zenboxDraft4"];
+var fileKey = ["zenboxDraft1", "zenboxDraft2", "zenboxDraft3", "zenboxDraft4"];
 var configKeys = ["zenboxConfig1", "zenboxConfig2"];
 var MAX_OPTIONS = 2;
-var configIndex = [0,0];
+var configIndex = [0, 0];
 var noPanes = [1, 2, 4];
 
 /* Theming */
-var themes = ["Day", "Night", "Other"];
-var bgColour = ["#fff", "#222", "#adc"];
-var zenColour = ["#eee", "#111", "#fff"]; // 222
-var fontColour = ["#000", "#eee", "#1bc"];
+var themes = ["Day", "Night", "Greeny", "Purply"];
+var bgColour = ["#fff", "#222", "#adc", "#6600ff"];
+var zenColour = ["#fff", "#222", "#fff", "#6600ff"];
+var fontColour = ["#000", "#eee", "#1bc", "#fff"];
 
-/*
-http://www.sitepoint.com/html5-full-screen-api/
-*/
+var defaultMsg = "<p>Hello, I'm a notepad.</p>\
+				  <br><p>You can edit this text and it will persist across browser sessions. I'm \
+				  intended to be used as a homepage replacement, for quick note taking throughout \
+				  the day.</p> \
+				  <br><p>You can save notes to your desktop, or make me fullscreen, using the links at the bottom.</p> \
+				  <br><p>N.B. - Press Esc to exit fullscreen.</p> ";
 
 window.onload = function() {
 
@@ -45,15 +49,17 @@ window.onload = function() {
 	updateConfig();
 
 	/* Check if we're online or not */
+	/*
 	if (navigator.onLine) {
 		online();
 	} else {
 		offline();
 	}
 
-	/* Update user on change */
+	// Update user on change 
 	window.addEventListener('online', online, false);
 	window.addEventListener('offline', offline, false);
+	*/
 
 	/* Store draft to local HTML5 storage after each keypress */
 	switch(noPanes[configIndex[1]]) {
@@ -187,7 +193,7 @@ function updateConfig() {
 		case noPanes[1]:
 			zenWrapper.innerHTML = '<div class="row"> \
 									<div class="col-md-6"> \
-									<div class="zenbox ui-widget-content" id="zb1" contenteditable="true"></div></div> \
+									<div class="zenbox" id="zb1" contenteditable="true"></div></div> \
 									<div class="col-md-6"> \
 									<div class="zenbox" id="zb2" contenteditable="true">Test zb2</div></div> \
 									</div>';
@@ -224,8 +230,15 @@ function updateConfig() {
 			zen.style.backgroundColor = zenColour[configIndex[0]]; 
 			zen.style.color = fontColour[configIndex[0]]; 
 
-			/* Set zen to current localstorage data */
-			zen.innerHTML = localStorage[fileKey[0]] || '';
+			/* If localStorage exists, add saved text to zb1 */
+			if (localStorage[fileKey[0]]) {
+
+				zen.innerHTML = localStorage[fileKey[0]] || '';
+			} else {
+				/* Or add default msg */
+				zen.innerHTML = defaultMsg;
+			}
+
 			break;
 		case noPanes[1]:
 			zen.style.backgroundColor = zenColour[configIndex[0]]; 
@@ -259,6 +272,7 @@ function updateConfig() {
 
 jQuery(document).ready(function() {
 
+	/* Config pane rendering */
 	$(".configToggle").click(function(){
 		$("#config").fadeToggle("slow");
 	});
@@ -270,34 +284,31 @@ jQuery(document).ready(function() {
 
 	/* Scrape and save all data to local computer */
 	$("#saveData").click(function() {
-		//$("#save-dialog").dialog("open");
-		var saveText = "testing saving";
-		var filename = "test-download.txt";
-		var saveLink = document.getElementById("downloadLink");
-		saveLink.setAttribute('href', 'data:text/plain,charset=utf-8,'+saveText);
-		saveLink.setAttribute('download', filename);
-		
-		document.getElementById("zb1").addEventListener("keyup", function()
-		{
-			
-			//saveLink.setAttribute('href',"data:text/plain,"+this.value);
-			window.location.href = saveLink.href;
-		},false);
-
-		//window.location.href="data:text/plain,"+ encodeURIComponent(saveText);
+		$("#save-dialog").dialog("open");
 	});
 
-	/*
-	document.getElementById("text").addEventListener("keyup",function() {
-			document.getElementById("download").href="data:text/plain,"+this.value;
-		}, false);
-	*/			
-
+	/* 'Save As...' dialog */
 	$("#save-dialog").dialog({
 		autoOpen: false,
 		height: 200,
 		width: 350,
-		model: true
+		modal: true,
+		buttons: {
+			"Save": function(event, ui) {
+				var filename = $("#save-dialog").find('input[name=saveAsFilename]').val(); // "test-download.txt";
+				var saveLink = document.getElementById("downloadLink");
+				saveLink.setAttribute("download", filename);
+				saveLink.setAttribute("href", "data:Content-type: text/plain, "+ escape(zb1.textContent));
+				saveLink.click();
+				$( this ).dialog( "close" );
+			},
+			Cancel: function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		close: function() {
+
+		}
 	});
 
 	/* Launch fullscreen mode */

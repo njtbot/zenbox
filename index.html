@@ -8,7 +8,7 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<title>Zenbox</title>
+<title>zen note</title>
 </head>
 
 <body>
@@ -28,14 +28,18 @@
 			<div class="col-md-4"><!--Coded with pretzels and pizza.--></div>
 			<div class="col-md-4">
 				<p class="text-center">
+					<a href="" id="downloadLink"></a>
 					<span class="glyphicon glyphicon-floppy-disk menuIcon" id="saveData"></span>&nbsp;
 					<span class="glyphicon glyphicon-trash" id="clearData"></span>&nbsp;
 					<span class="glyphicon glyphicon-fullscreen" id="fullscreen"></span>
-					&nbsp;&nbsp;|&nbsp;&nbsp;
+					&nbsp;&nbsp;
+					<!--
+					|&nbsp;&nbsp;
 					<span class="" id="status">Checking...</span>
+					-->
 				</p>
 			</div>
-			<div class="col-md-4"><div class="pull-right"><!--&copy; transmitlabs 2013.--></div></div>
+			<div class="col-md-4"><div class="pull-right"><a href="http://nicholastrimble.com/">nicholastrimble.com</a> / 2014</div></div>
 		</div>
 	</div>
 
@@ -44,37 +48,49 @@
 		<button type="button" class="close" aria-hidden="true">&times;</button></p>
 	
 		<div class="configOption">
-			<p class="text-center">Theme</p><hr>
-			<div class="row" id="config1">
-				<div class="col-md-4"><div class="arrow-left"></div></div>
-				<div class="col-md-4 text-center" id="config1value">Daytime</div>
-				<div class="col-md-4"><div class="pull-right arrow-right"></div></div>
+			<p class="text-center">Theme</p>
+			<div class="well">
+				<div class="row" id="config1">
+					<div class="col-md-4"><div class="arrow-left"></div></div>
+					<div class="col-md-4 text-center" id="config1value">Daytime</div>
+					<div class="col-md-4"><div class="pull-right arrow-right"></div></div>
+				</div>
 			</div>
 		</div>
-		<hr>
+		
 		<div class="configOption">
-			<p class="text-center">Panes</p><hr>
-			<div class="row" id="config2">
-				<div class="col-md-4"><div class="arrow-left"></div></div>
-				<div class="col-md-4 text-center" id="config2value">1</div>
-				<div class="col-md-4"><div class="pull-right arrow-right"></div></div>
+			<p class="text-center">Panes</p>
+			<div class="well">
+				<div class="row" id="config2">
+					<div class="col-md-4"><div class="arrow-left"></div></div>
+					<div class="col-md-4 text-center" id="config2value">1</div>
+					<div class="col-md-4"><div class="pull-right arrow-right"></div></div>
+				</div>
 			</div>
 		</div>
-		<hr>
 
-	</div>
+		<!--
+		<div class="configOption">
+			<p class="text-center">Other</p>
+			<div class="well">
+				<form>
+					<input type="checkbox" name="resizable"> Resizable?<br>
+					<input type="checkbox" name="draggable"> Draggable?<br>
+				</form>
+			</div>
+		</div>
+		-->
+	</div>	
 
-	<div id="save-dialog" title="Save As">
+	<div id="save-dialog" title="Save As...">
 		<form>
 		<fieldset>
-			<input type="text" name="filename" class="text ui-widget-content ui-corner-all">
+			<input type="text" name="saveAsFilename" value="filename.txt" class="text ui-widget-content ui-corner-all">
 		</fieldset>
 		</form>
 	</div>
-
-	<a href="" id="downloadLink"></a>
-		
-<script src="zen.js"></script>	
+	
+	<script src="zen.js"></script>	
 </body>
 
 </html>
