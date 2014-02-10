@@ -1,18 +1,16 @@
-Zenbox
-=====================
+Zen note
+===
 
-I'm Zenbox. "Lightweight" (as in feature-devoid) homepage replacement that allows you to store persistent notes as your default homepage.
+I'm a lightweight notepad. Add me as your homepage for persistent note taking in-browser without any plugins or extensions.
 
-Uses html5 local storage, so you better have a good browser. IE doesn't really get a look in. This isnt' really tested with anything but Firefox yet either. 
+===
 
-29/12/13 - Just noticed there's another project called zenbox on gh... name change soon. Also, Sublime text seems to have ruined all tabs in the project. Oops.
+Uses HTML5 local storage, so you better have a good browser. IE doesn't really get any support. This is only tested on Firefox.
 
-###Todo    
-Cloud integration (e.g. Dropbox etc.)   
-Fullscreen (HTML5)   
-Scrape data to file   
+Todo -     
+Cloud integration (either through Dropbox or lightweight MongoDB etc.)  
 Scrape and email all panes   
 Rich text editing (hallo.js?)   
 Procedural pane generation   
 Custom width   
-Toggle resize    
+Toggle resize and drag  
