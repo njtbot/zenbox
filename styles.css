@@ -1,7 +1,7 @@
 #wrapper {
-	width: 800px;
-	margin: 50px auto;
-	background: rgba(0,0,0,0);
+    width: 800px;
+    margin: 50px auto;
+    background: rgba(0,0,0,0);
 }
 
 a {
@@ -29,118 +29,118 @@ a:hover {
 }
 
 .zenbox {
-	font-family: 'Lucida Console', 'Courier New';
-	font-size: 16pt;
-	font-weight: 1.2;
-	padding: 40px 20px 70px 40px;
-	width: auto;
-	height: 100%;
-	margin-left: auto;	
-	margin-right: auto;	
-	outline: 0px solid transparent;
+    font-family: 'Lucida Console', 'Courier New';
+    font-size: 16pt;
+    font-weight: 1.2;
+    padding: 40px 20px 70px 40px;
+    width: auto;
+    height: 100%;
+    margin-left: auto;  
+    margin-right: auto; 
+    outline: 0px solid transparent;
 }
 
 .glyphicon { 
-	cursor: pointer;
+    cursor: pointer;
 }
 #quickLinks {
-	cursor: default;
+    cursor: default;
 }
 #zb1 { 
-	background-color: #000;
+    background-color: #000;
 }
 
 #zb2 { 
-	background-color: #000;
+    background-color: #000;
 }
 
 #zb3 {
-	background-color: #000;
+    background-color: #000;
 }
 
 #zb4 {
-	background-color: #000;
+    background-color: #000;
 }
 
 .zenbox::-moz-selection {
-	background: #ffb7b7;
+    background: #ffb7b7;
 }
 .zenbox::selection {
-	background: #ffb7b7;
+    background: #ffb7b7;
 }
 
 .zenbox:hover {
-	outline: 0px solid transparent;
+    outline: 0px solid transparent;
 }
 
 .configToggle {
-	position: fixed;
-	width: 30px;
-	height: 30px;
-	padding-left: 9px;
-	padding-top: 5px;
-	color: #ccc;
-	background: rgba(0,0,0,0);
-	right: 20px;
-	top: 20px;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    padding-left: 9px;
+    padding-top: 5px;
+    color: #ccc;
+    background: rgba(0,0,0,0);
+    right: 20px;
+    top: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .configToggle:hover {
-	background: #eee;
+    background: #eee;
 }
 
 #config {
-	position: fixed;
-	right: 20px;
-	top: 20px;
-	width: 250px;
-	height: 270px;
-	background: #fff;
-	border: 1px solid #eee;
-	padding: 15px 20px 20px 20px;
-	display: none;
-	border-radius: 10px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 250px;
+    height: 270px;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px 20px 20px 20px;
+    display: none;
+    border-radius: 10px;
 }
 
 #configOption {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 #footer {
-	position: fixed;
-	left: 5px;
-	bottom: 25px;
-	height: 25px;
-	width: 100%;
-	color: #999;
-	padding: 20px 30px 20px 30px;
+    position: fixed;
+    left: 5px;
+    bottom: 25px;
+    height: 25px;
+    width: 100%;
+    color: #999;
+    padding: 20px 30px 20px 30px;
 }
 
 .glyphicon:hover {
-	color: #000;
-	cursor: arrow;
+    color: #000;
+    cursor: arrow;
 }
 
 .arrow-right {
-	position: relative;
-	top: 5px;	
-	width: 0;
-	height: 0;
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-	border-left: 8px solid #000;
+    position: relative;
+    top: 5px;   
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #000;
 }
 
 .arrow-left {
-	position: relative;
-	top: 5px;
-	width: 0;
-	height: 0;
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-	border-right: 8px solid #000;
+    position: relative;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #000;
 }
